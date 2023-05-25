@@ -7,6 +7,33 @@
     <title>Información</title>
 </head>
 <body>
+    <h1 id="nombres"></h1><br>
+    <h2 id="apellidos"></h2><br>
+    <h2 id="edad"></h2><br>
+    <script>
+        getParameter = (key) =>{
+            address = window.location.search;
+            parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+        var nombre = getParameter("nombre");
+        document.getElementById("nombres").innerHTML = "Te llamas: " + nombre;
+        var apellido = getParameter("apellido");
+        document.getElementById("apellidos").innerHTML = "Te apellidas: " + apellido;
     
+        var fecha = getParameter("fecha");
+        var arreglo = fecha.split("-");
+        var fecha = arreglo[0];
+        if (fecha > 2023){
+            document.getElementById("edad").innerHTML = "Ocurrió un error, tu nacimiento está adelantado a 2023";
+        }else{
+            document.getElementById("edad").innerHTML = "Tienes " + (2023 - fecha) + " años";
+        }
+        var correo = getParameter("correo");
+        var telefono = getParameter("telefono");
+    </script>
+
+    <h3><a href="mailto:mail">Correo</a></h3><br>
+    <h3><a href="tel:tel">Telefono</a></h3><br>
 </body>
 </html>

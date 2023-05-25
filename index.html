@@ -7,8 +7,8 @@
     <title>Formulario</title>
 </head>
 <body>
-    <h1>Por favor regístrate :)</h1>
-        <form action="info.html" method="get">
+    <h1>Hola!, por favor contesta mi encuesta</h1>
+        <form action="informacion.html" method="get">
             <label>Nombre:</label><input type="text" name="nombre"><br>
             <label>Apellidos:</label><input type="text" name="apellido"><br>
             <label>Correo:</label><input type="email" name="mail"><br>
@@ -21,12 +21,11 @@
         </form>
         <script>
             function alertacontra(){
-                var pwd=(document.getElementById("contra").value);
-                console.log(pwd);
-                if (pwd.length < 5){
-                    alert("Tu contraseña es débil, te recomendamos reemplazarla");
-                }else{
+                var contrasena=(document.getElementById("contra").value);
+                if (contrasena.length > 5){
                     alert("Tu contraseña es segura");
+                }else{
+                    alert("Tu contraseña es débil, te recomendamos reemplazarla");
                 }
             }
         </script>
